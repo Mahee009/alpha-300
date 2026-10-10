@@ -1,11 +1,12 @@
-def contains_duplicate(nums):
-    seen = set()
-    for num in nums:
-        if num in seen:
-            return True
-        seen.add(num)
-    return False
+class Solution:
+    def containsDuplicate(self, nums):
+        seen = set()
+        for num in nums:
+            if num in seen:
+                return True
+            seen.add(num)
+        return False
 
 
-print(contains_duplicate([1, 2, 3, 1]))
-print(contains_duplicate([1, 2, 3, 4]))
+print(Solution().containsDuplicate([1, 2, 3, 1]))
+print(Solution().containsDuplicate([1, 2, 3, 4]))

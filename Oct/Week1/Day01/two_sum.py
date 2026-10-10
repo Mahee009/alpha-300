@@ -1,12 +1,13 @@
-def two_sum(nums, target):
-    seen = {}
-    for i, num in enumerate(nums):
-        complement = target - num
-        if complement in seen:
-            return [seen[complement], i]
-        seen[num] = i
-    return []
+class Solution:
+    def twoSum(self, nums, target):
+        seen = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return [seen[complement], i]
+            seen[num] = i
+        return []
 
 
-print(two_sum([2, 7, 11, 15], 9))
-print(two_sum([3, 2, 4], 6))
+print(Solution().twoSum([2, 7, 11, 15], 9))
+print(Solution().twoSum([3, 2, 4], 6))
