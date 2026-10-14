@@ -91,3 +91,12 @@ print(factorial(5))
 class dog:
     def eat(self):
         print("eating...")
+
+class cat:
+    def eat(self):
+        print("eating...")
+
+animal = dog()
+animal2 = cat()
+animal.eat()
+animal2.eat()
