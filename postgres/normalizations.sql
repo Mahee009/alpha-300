@@ -1,6 +1,6 @@
 -- 1NF: every column should have only ONE value , no lists
 
--- NOT in 1NF: items column has multiple values in one cell
+
 CREATE TABLE orders_bad(
 order_id INT,
 customer_name VARCHAR(50),
@@ -29,9 +29,6 @@ INSERT INTO orders_1nf VALUES
 SELECT * FROM orders_1nf;
 
 -- 2NF: must be in 1NF + no partial dependency
--- (non-key column should depend on the FULL composite key, not just part of it)
-
-
 -- but item_name and price depend only on item_id (partial dependency)
 CREATE TABLE order_items_bad(
 order_id INT,
@@ -72,7 +69,7 @@ FROM order_items oi
 JOIN items i ON oi.item_id = i.item_id;
 
 -- 3NF: must be in 2NF + no transitive dependency
--- (non-key column should not depend on another non-key column)
+-- non-key column should not depend on another non-key column
 -- customer_phone depends on customer_id, not directly on order_id
 CREATE TABLE orders_bad(
 order_id INT PRIMARY KEY,
@@ -104,7 +101,7 @@ INSERT INTO orders VALUES
 (102,1,'2026-10-18'),
 (103,2,'2026-10-18');
 
--- phone is stored only once even though Virinchi has 2 orders
+-- phone is stored only once even though name has 2 orders
 SELECT o.order_id, c.customer_name, c.customer_phone
 FROM orders o
 JOIN customers c ON o.customer_id = c.customer_id;
