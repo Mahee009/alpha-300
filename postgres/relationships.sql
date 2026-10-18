@@ -1,9 +1,7 @@
 
 -- Relationships in Postgres
--- 1-to-1, 1-to-many, many-to-many (library example)
-
-
--- ---------- 1-to-MANY ----------
+-- 1-to-1, 1-to-many, many-to-many 
+-- 1-to-MANY 
 -- one author can write many books, but a book has one author
 
 CREATE TABLE authors(
@@ -63,8 +61,7 @@ JOIN membership_cards c ON m.member_id = c.member_id;
 
 
 --  MANY-to-MANY 
--- one member can borrow many books, one book can be borrowed by many members
--- so we need a junction table (borrows) with a composite primary key
+-- one member can borrow many books, one book can be borrowed by many 
 
 CREATE TABLE borrows(
 member_id INT,
