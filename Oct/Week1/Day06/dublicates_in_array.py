@@ -10,7 +10,5 @@ def findDuplicates(nums):
             nums[slot] = -nums[slot]
 
     return result
-
-
 nums = [3, 1, 1, 2]
 print(findDuplicates(nums))

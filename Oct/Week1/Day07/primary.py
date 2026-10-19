@@ -17,7 +17,7 @@ class Solution:
 
         ans = []
         for x in nums1:
-            # take it only if both still have some left
+            
             if c1[x] > 0 and x in c2 and c2[x] > 0:
                 ans.append(x)
                 c1[x] -= 1
